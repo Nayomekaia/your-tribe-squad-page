@@ -1,16 +1,4 @@
-@font-face {
-    font-family: "Lalezar";
-    src: url(../assets/fonts/Lalezar/Lalezar-Regular.ttf) format("opentype");
-}
 
-@font-face {
-    font-family: "lekton";
-    src: 
-    url(../assets/fonts/Lekton/Lekton-Bold.ttf) format("opentype"),
-    url(../assets/fonts/Lekton/Lekton-Italic.ttf) format("opentype"),
-    url(../assets/fonts/Lekton/Lekton-Regular.ttf) format("opentype");
-    
-}
 
 :root{
     /*Colors*/
