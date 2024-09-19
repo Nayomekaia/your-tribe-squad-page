@@ -6,6 +6,8 @@
     --primary: #023047;
     --secondary: #E7D7C1;
     --white: #ffffff;
+    --opace-white-1: #ffffffbc;
+    --opace-white-2: #ffffff92;
 
     /*border*/
     --border-radius: 100px;
@@ -16,6 +18,7 @@
     --primary-font: "Lalezar";
     --secondary-font: "lekton";
 
+    --font-size-xxxl: 85px;
     --font-size-xxl: 75px;
     --font-size-xl: 35px;
     --font-size-l:24px;
@@ -47,7 +50,8 @@ body{
 .header--container{
     font-size: var(--font-size-xl);
     margin-bottom: 4em;
-    
+
+    text-align: center;
 }
 
 .header--container .titel{
@@ -55,12 +59,17 @@ body{
     flex-wrap: nowrap;
 
     margin: 2em;
+    justify-content: center;
 }
 
 .header--container h1{
     font-family: var(--primary-font);
 
     margin-right: .25em;
+}
+
+.header--container h1:last-child {
+    margin-right: 0; /* Remove right margin for the last h1 */
 }
 
 .header--container .textBig{
@@ -70,16 +79,49 @@ body{
 .header--container p{
     font-family: var(--secondary-font);
     font-size: var(--font-size-s);
+
+    margin: 0 auto;
     width: 800px;
+
+    justify-content: center;
 }
 
 /*In the back*/
+
+.inThebacktext-container{
+    position: relative;
+    display: block; /* Ensures it takes full width and follows normal document flow */
+
+    margin: 2em auto; /* Adjust margin for spacing; auto will center it horizontally */
+    padding-right: 4em;
+    bottom: -200px;
+
+    text-align: right;
+  
+}
+
+.inThebacktext--Welc{
+    font-family: var(--primary-font);
+    font-size: var(--font-size-xxxl);
+    color: var(--opace-white-1);
+}
+
+.inThebacktext--GL{
+    font-family: var(--secondary-font);
+    font-size: var(--font-size-xxl);
+    color: var(--opace-white-2);
+}
 
 /*horizontal-scroll--container*/
 
 .horizontal-scroll--container{
     display: flex;
     flex-wrap: nowrap;
+
+    overflow-x: hidden; /* Hide the horizontal scrollbar */
+    overflow-y: hidden; /* Hide the vertical scrollbar */
+
+    width: 100vw; /* Full viewport width */
 }
 
 .img{
@@ -96,7 +138,8 @@ body{
 }
 
 .textbox{
-    position: relative;
+    position: absolute;
+    bottom: 0px;
 
     font-family: var(--secondary-font);
     font-weight: var(--secondary-font-bold);
@@ -107,8 +150,128 @@ body{
 
     border: var(--border);
     border-color: var(--border-color);
-    height: 50px;
+    height: auto;
     width: 200px;
-
-
 }
+
+article {
+    position: relative;
+    flex: 0 0 auto; /* Make each article take its natural width */
+
+    margin-top: 4em;
+    margin-right: 2em;
+}
+
+/*end*/
+
+
+.end-of-tour{
+    position: relative;
+    float: right;
+
+    margin-right: 4em;
+}
+
+.end-of-tour h2{
+    font-family: var(--primary-font);
+    font-size: var(--font-size-xl);
+    color: var(--opace-white-1);
+}
+
+/*Responsive breakpoint tablet*/
+
+@media( max-width:769px){
+
+    /*header*/
+    .header--container .textBig, .tour{
+        font-size: var(--font-size-xl);
+    }
+
+    .header--container p {
+        width: 300px;
+        font-size: var(--font-size-m);
+    }
+
+    /*in the back*/
+
+    .inThebacktext--Welc, .inThebacktext--GL {
+        font-size: var(--font-size-xxl);
+    }
+
+    /*horizontal scroll container*/
+
+    .horizontal-scroll--container{
+        width: 100%;
+        padding-bottom: 2em;
+    }
+
+    .img{
+        width: 300px;
+        height: 300px;
+        margin-right: 1em;
+    }
+
+    .textbox {
+        font-size: var(--font-size-m);
+        width: 150px; 
+    }
+
+    /*end*/
+
+    .end-of-tour h2 {
+        font-size: var(--font-size-xl);
+    }
+
+    .end-of-tour{
+        margin-right: .5em;
+    }
+}
+
+/*Responsive breakpoint mobile*/
+
+@media( max-width: 480px){
+        /*header*/
+        .header--container .textBig, .tour {
+            font-size: var(--font-size-xl);
+        }
+    
+        .header--container p {
+            width: 250;
+            font-size: var(--font-size-s);
+        }
+    
+        /*in the back*/
+    
+        .inThebacktext--Welc, .inThebacktext--GL {
+            font-size: var(--font-size-l);
+        }
+    
+        /*horizontal scroll container*/
+    
+        .horizontal-scroll--container{
+            width: 100%;
+            padding-bottom: 2em;
+        }
+    
+        .img{
+            width: 250px;
+            height: 250px;
+            margin-right: 1em;
+        }
+    
+        .textbox {
+            font-size: var(--font-size-s);
+            width: 125px; 
+        }
+    
+        /*end*/
+    
+        .end-of-tour{
+            margin-right: .5em;
+        }
+
+        .end-of-tour h2 {
+            font-size: var(--font-size-xl);
+        }
+}
+
