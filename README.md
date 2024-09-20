@@ -9,16 +9,3 @@ De instructie van deze leertaak staan in de [INSTRUCTIONS.md](https://github.com
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
 
-
-## Dev life cycle ##
-
-
-## analyseren
-
-## ontwerpen
-
-## bouwen
-
-## integreren
-
-## testen
